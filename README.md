@@ -10,12 +10,15 @@ Here's what happens when you run it:
 
 **1. Product Research** — Claude reviews your store's website and product pages to understand each product: what it is, who it's for, key benefits, and how your store positions it. This research is saved so you can browse and verify it.
 
-**2. Keyword Research (3 sources)** — Claude builds a keyword pool for each product using three different sources:
+**2. Keyword Research (4 sources)** — Claude builds a keyword pool for each product using four different sources:
 - **Your actual search term data** from Google Ads — the real queries people typed that triggered your Shopping ads. This is the highest-quality keyword data because it's what your customers actually search for.
 - **Google Keyword Planner** — Claude runs Keyword Planner research to discover high-volume keywords you might be missing, including terms your ads aren't currently showing for.
+- **Your website** — Claude reviews your product pages and store website to understand how you describe and position your products, pulling keyword ideas from the language you and your customers already use.
 - **AI-generated keywords** — Claude uses its understanding of your products to think of additional relevant keywords that searchers might use.
 
 **3. Title Generation** — Using all that research, Claude rewrites each title to pack in as many high-quality, relevant keywords as possible while keeping it readable. Titles are structured so Google can match them to more searches.
+
+Just say "optimize my product titles" and it does everything automatically — pulls your data, researches keywords, generates titles, creates the files. No downloading data, no fiddling with settings, no technical steps.
 
 You get three files:
 - **product-title-reference.xlsx** — Your optimized titles side-by-side with the originals. Review and edit here.
