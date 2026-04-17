@@ -37,7 +37,7 @@ A supplemental feed is a file you upload to Google Merchant Center that override
 
 ### Step 1: Install this plugin
 
-1. Download `product-title-optimizer.zip` from this repository
+1. Download `product-title-optimizer.zip` from this repository (click "code" at top right > Download ZIP)
 2. Open Claude Desktop and switch to **Co-Work** (top center)
 3. Click **Customize** in the left sidebar
 4. Under Personal plugins, click the **+** button
