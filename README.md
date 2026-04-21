@@ -49,17 +49,22 @@ A supplemental feed is a file you upload to Google Merchant Center that override
 The plugin includes a GoMarble connector that gives Claude access to your Google Ads data. GoMarble is free.
 
 **First, set up GoMarble:**
-1. Go to [apps.gomarble.ai](https://apps.gomarble.ai) and create a free account
+
+1. Go to [https://apps.gomarble.ai?aff=dZ3o4LeEQloe](https://apps.gomarble.ai?aff=dZ3o4LeEQloe) and create a free account.
+
+   *That's my affiliate link. If you'd prefer not to use it, go to [apps.gomarble.ai](https://apps.gomarble.ai) directly.*
+
 2. Sign in with the Google account that has access to your Google Ads
 3. Connect Google Ads as a data source inside GoMarble
 
 **Then, connect it in Claude:**
-4. In Claude Co-Work, go to **Customize** in the left sidebar
-5. Find the Product Title Optimizer plugin
-6. Click **Connectors**
-7. Click **Connect** next to GoMarble
-8. Authorize the connection
-9. Done — Claude can now read your Google Ads data
+
+1. In Claude Co-Work, go to **Customize** in the left sidebar
+2. Find the Product Title Optimizer plugin
+3. Click **Connectors**
+4. Click **Connect** next to GoMarble
+5. Authorize the connection
+6. Done — Claude can now read your Google Ads data
 
 ## Usage
 
