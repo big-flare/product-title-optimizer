@@ -138,8 +138,20 @@ For each product, write an optimized title using the keyword research from Phase
 
 **Title structure:** Multiple sections separated by `|`. Each section is a coherent phrase — not a run-on keyword list. Each pipe-separated section should read like something a person might actually type into Google.
 
+**Two types of brand — store brand vs product brand**
+
+- **Store brand** — the brand of the store selling the product (e.g., the retailer's name). Always goes in the LAST section of the title. When we say "brand" without qualification, we mean the store brand.
+- **Product brand** — the manufacturer/maker of the product itself, available in `shopping_product.brand` from the Google Ads data. Only relevant when the store is a reseller of third-party brands.
+
+Two cases to handle:
+
+1. **Store sells its own products** (store brand = product brand, or products are unbranded). Only the store brand appears, in the last section.
+2. **Store is a reseller of other brands** (product brand ≠ store brand). The product brand MUST appear in the **first half of the title** — ideally in the first or second section, next to the product identity. The store brand still goes LAST. Missing the product brand in this case is a serious issue: searchers looking for that brand won't match.
+
+How to detect which case applies: inspect `shopping_product.brand` values across the pulled products. If the brand field is empty, consistently matches the store name, or is the same value for every product, it's case 1. If `shopping_product.brand` varies across products or differs from the store name, it's case 2 (reseller) — include the product brand in every title for those products.
+
 **Section ordering (front to back):**
-- **First section**: The product's core identity and the #1 bullseye keyword in exact word order. No variant info here.
+- **First section**: The product's core identity and the #1 bullseye keyword in exact word order. No variant info here. **If the store is a reseller (case 2 above), include the product brand here or in the second section at the latest.**
 - **Next sections**: Additional high-quality keyword phrases. Front-load exact word order for high-priority keywords. Variant info (size, count, weight, colour) goes here. As you progress, use more efficient combined phrases that target multiple keywords at once.
 - **Later sections**: Category/broader keyword phrases.
 - **Last section**: Store brand name. ALWAYS last.
@@ -173,13 +185,13 @@ This targets: "best magnesium spray", "magnesium spray for sleep", "magnesium sp
 
 **Handling variant-heavy catalogues:**
 
-Many stores have the same base product in multiple variants (colours, sizes, styles). For example, "24K Gold Forever Rose" in 30+ colours. This needs special handling:
+Many stores have the same base product in multiple variants (colours, sizes, styles). For example, "24K Gold Dipped Rose" in 30+ colours. This needs special handling:
 
 - **Before generating titles**, identify products that share the same base product. Group them by stripping variant info (colour, size) from the title.
 - **Preserve variant info exactly as it appears in the original title.** Parse the colour/size/style from the original title and carry it through to the optimized title. NEVER guess, reassign, or invent variant info — if the original says "Red Quartz", the optimized title must say "Red Quartz".
 - **Use a consistent template within each variant group.** Products that share the same base should have the same title structure with only the variant swapped. This ensures uniqueness and avoids the need to individually craft 30+ similar titles.
 - **Validate uniqueness after generating all titles.** Check for duplicates before presenting to the user. If two products have identical optimized titles, differentiate them using whatever makes them unique in the original title.
-- **Variant info goes in the first section** (as part of the product identity), not buried later. Example: `24K Gold Dipped Forever Rose - Red Quartz | ...` not `24K Gold Dipped Forever Rose | Red Quartz | ...`
+- **Variant info goes in the first section** (as part of the product identity), not buried later. Example: `24K Gold Dipped Rose - Red Quartz | ...` not `24K Gold Dipped Rose | Red Quartz | ...`
 
 **Example titles (store brand is always the last section):**
 
@@ -197,6 +209,11 @@ Equestrian (store: Trail & Ride):
 
 Furniture (store: Home Kit NZ):
 `Raglan Bed Frame - Oak - Double | Wooden Double Bed Frame & Base with Headboard | Solid Oak Bedroom Furniture New Zealand | Home Kit NZ`
+
+Equestrian reseller (store: Trail & Ride, product brand: Double T — a third-party saddle maker the store resells):
+`Double T Barrel Style Saddle - 12 Inch | Best Western Saddles with Teal Gator Patchwork | Horse Saddles For Sale | Trail & Ride`
+
+Note how the product brand "Double T" sits in the first section alongside the product identity, while the store brand "Trail & Ride" remains in the last section.
 
 ### Phase 4: Export and Review
 
