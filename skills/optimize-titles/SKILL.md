@@ -151,8 +151,9 @@ Two cases to handle:
 How to detect which case applies: inspect `shopping_product.brand` values across the pulled products. If the brand field is empty, consistently matches the store name, or is the same value for every product, it's case 1. If `shopping_product.brand` varies across products or differs from the store name, it's case 2 (reseller) — include the product brand in every title for those products.
 
 **Section ordering (front to back):**
-- **First section**: The product's core identity and the #1 bullseye keyword in exact word order. No variant info here. **If the store is a reseller (case 2 above), include the product brand here or in the second section at the latest.**
-- **Next sections**: Additional high-quality keyword phrases. Front-load exact word order for high-priority keywords. Variant info (size, count, weight, colour) goes here. As you progress, use more efficient combined phrases that target multiple keywords at once.
+- **First section**: The product's core identity and the #1 bullseye keyword in exact word order. The front of the title is reserved for words people actually search. Searched variants (size like "queen", material like "oak", colour) may sit here inside the bullseye keyword phrases; non-searched variant info never goes at the front. **If the store is a reseller (case 2 above), include the product brand here or in the second section at the latest.**
+- **Next sections**: Additional high-quality keyword phrases. Front-load exact word order for high-priority keywords. As you progress, use more efficient combined phrases that target multiple keywords at once.
+- **Middle of the title**: Non-searched variant info (volume like "200ml", bottle/pack count like "1 Bottle" / "Pack of 3") goes here as its own small section, roughly 50-65% of the way through the title.
 - **Later sections**: Category/broader keyword phrases.
 - **Last section**: Store brand name. ALWAYS last.
 
@@ -161,6 +162,8 @@ How to detect which case applies: inspect `shopping_product.brand` values across
 `Best Magnesium Spray for Sleep, Feet & Pain Relief`
 
 This targets: "best magnesium spray", "magnesium spray for sleep", "magnesium spray for feet", "magnesium spray pain relief" — all from one section.
+
+Actively merge overlapping candidate sections: if two candidate sections share most of their words — "Magnesium Spray For Sleep" and "Best Magnesium Sleep Spray" — combine them into one section that covers everything: "Best Magnesium Spray for Sleep" covers "best magnesium spray", "magnesium spray for sleep", AND "magnesium spray", preferring the higher-volume phrasing. Never repeat a keyword phrase that is already covered in exact word order elsewhere in the title — repetition wastes space. Spend every character saved on additional product keywords first, then category keywords once the product keywords are covered.
 
 - **High-priority bullseye keywords**: exact word order, front sections.
 - **Medium/lower-priority keywords**: combine efficiently, words represented but not necessarily exact order.
@@ -182,6 +185,7 @@ This targets: "best magnesium spray", "magnesium spray for sleep", "magnesium sp
   - Electronics → storage capacity, screen size, model year
   - Furniture → material and dimensions (e.g., "oak", "2-seater")
   - Only include if it matters to a searcher
+- Variant placement depends on whether people search it. If the variant is part of how people search — size ("queen mattress"), material ("oak bed frame"), colour — it can sit at the front inside the bullseye keyword phrases. If it is information buyers want to know but never type into Google — "200ml", "1 Bottle", "Pack of 3" — place it as its own small section in the middle of the title, roughly 50-65% of the way through. Never spend front-of-title space on non-searched variant info.
 
 **Handling variant-heavy catalogues:**
 
@@ -191,29 +195,30 @@ Many stores have the same base product in multiple variants (colours, sizes, sty
 - **Preserve variant info exactly as it appears in the original title.** Parse the colour/size/style from the original title and carry it through to the optimized title. NEVER guess, reassign, or invent variant info — if the original says "Red Quartz", the optimized title must say "Red Quartz".
 - **Use a consistent template within each variant group.** Products that share the same base should have the same title structure with only the variant swapped. This ensures uniqueness and avoids the need to individually craft 30+ similar titles.
 - **Validate uniqueness after generating all titles.** Check for duplicates before presenting to the user. If two products have identical optimized titles, differentiate them using whatever makes them unique in the original title.
-- **Variant info goes in the first section** (as part of the product identity), not buried later. Example: `24K Gold Dipped Rose - Red Quartz | ...` not `24K Gold Dipped Rose | Red Quartz | ...`
+- **Searched variants (size, material, colour) go in the first section** as part of the product identity. Example: `24K Gold Dipped Rose - Red Quartz | ...` not `24K Gold Dipped Rose | Red Quartz | ...`. Non-searched variant info (volume, bottle/pack count) still goes mid-title as its own small section, even within a variant group — keep its position consistent across the group's shared template.
 
 **Example titles (store brand is always the last section):**
 
 Health supplements (store: Pure Minerals):
-`Magnesium Oil Spray 200ml - 1 Bottle | Best Magnesium Spray for Sleep, Feet & Pain Relief | Natural Magnesium Oil for Kids & Adults | Pure Minerals`
+`Magnesium Oil Spray | Best Magnesium Spray for Sleep | Magnesium Foot Spray | 200ml - 1 Bottle | Muscle Recovery & Pain Relief Spray | Pure Minerals`
+
+Note the structure: the first section is the #1 bullseye keyword in exact word order, nothing else. "Best Magnesium Spray for Sleep" is one merged section covering "best magnesium spray", "magnesium spray for sleep", and "magnesium spray" at once — never written as separate near-duplicate sections. The non-searched variant info "200ml - 1 Bottle" sits mid-title (~53% through) because nobody types it into Google, and the characters saved by merging are spent on additional keywords.
 
 Posture wear (store: Align Co):
 `Back Brace for Posture | Full Back Support Brace & Straightener for Men and Women | Best Posture Corrector Vest for Back Pain Relief | Align Co`
 
 Memorials (store: Eternal Rest):
-`Platinum Elegance Urn for Ashes | Metal Adult Urns | Memorials For Your Loved One | Urns For Ashes | Cremation Urns | Eternal Rest`
-
-Equestrian (store: Trail & Ride):
-`Double T Barrel Style Saddle With Teal Gator Patchwork - 12 Inch | Best Western Saddles | Horse Saddles For Sale | Trail & Ride`
+`Platinum Elegance Urn for Ashes | Metal Adult Cremation Urns | Memorial Urns For Your Loved One | Funeral Urns for Human Ashes | Eternal Rest`
 
 Furniture (store: Home Kit NZ):
 `Raglan Bed Frame - Oak - Double | Wooden Double Bed Frame & Base with Headboard | Solid Oak Bedroom Furniture New Zealand | Home Kit NZ`
 
-Equestrian reseller (store: Trail & Ride, product brand: Double T — a third-party saddle maker the store resells):
-`Double T Barrel Style Saddle - 12 Inch | Best Western Saddles with Teal Gator Patchwork | Horse Saddles For Sale | Trail & Ride`
+The searched variants "Oak" and "Double" earn their front placement — people literally search "oak bed frame" and "double bed frame". Contrast with "200ml - 1 Bottle" above, which nobody searches and therefore sits mid-title.
 
-Note how the product brand "Double T" sits in the first section alongside the product identity, while the store brand "Trail & Ride" remains in the last section.
+Equestrian reseller (store: Trail & Ride, product brand: Double T — a third-party saddle maker the store resells):
+`Double T Barrel Style Saddle - 12 Inch | Best Western Barrel Racing Saddles | Teal Gator Patchwork | Horse Saddles For Sale | Trail & Ride`
+
+Note how the product brand "Double T" sits in the first section alongside the product identity, the searched seat-size variant "12 Inch" stays at the front (searchers type "12 inch barrel saddle"), the non-searched style detail "Teal Gator Patchwork" sits mid-title as its own small section, and the store brand "Trail & Ride" remains last.
 
 ### Phase 4: Export and Review
 
