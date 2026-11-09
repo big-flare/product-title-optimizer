@@ -1,5 +1,9 @@
 # Product Title Optimizer
 
+> **The Product Title Optimizer is now part of the [Big Flare Skills Pack](https://github.com/big-flare/skills-pack).** New versions ship there. It works with any Google Ads connection, or with none: you can upload your Google Ads reports instead, so you don't need a GoMarble key. One install gets you this and every other free Big Flare skill. See the [Skills Pack install steps](https://github.com/big-flare/skills-pack#install).
+>
+> This page and its downloads stay up for anyone following the original video. The setup below is for this original version (v1.2.0).
+
 Optimize your Google Shopping product titles using real search data from your Google Ads account. This plugin pulls your actual products and search terms, researches your products and customers, and rewrites your product titles to maximise their traffic — then exports a ready-to-upload file for Google Merchant Center.
 
 ## What This Does
